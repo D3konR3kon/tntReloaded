@@ -1,0 +1,101 @@
+<header class="bg-light">
+    <div class="container">
+      <nav class=" navbar navbar-default justify-content-space">
+        <a routerLink="/home" class="nav-link text-dark"><span class="fa-stack small"><i class="fa-solid fa-circle fa-stack-2x">
+
+        </i>
+        <i class="fa-solid fa-house-chimney-window fa-stack-1x"></i>
+      </span></a>
+      </nav>
+          
+              
+    </div>
+   
+  </header>
+
+<div class="container d-flex justify-content-center mt-5">
+    <div class="col-10 col-sm-4 col-md-4 col-lg-4 p-3 card">
+      <img src="" alt="" id="profile-img" class="profile-img-card">
+      <form *ngIf="!isSuccessful" [formGroup]="shopForm" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+          <div class="form-group">
+              <label for="name">Shop name:</label>
+              <input type="text" 
+              class="form-control" 
+              name="name" 
+              
+              formControlName="name"
+              required
+              minlength="3"
+              maxlength="20"
+              
+              >
+              <!-- <div class="alert alert-danger" *ngIf="username.errors && f.submitted">
+                  <div *ngIf="username.errors['required']">Shop name is required</div>
+                  <div *ngIf="username.errors['minlength']">Shop name must be at least 3 characters</div>
+                  <div *ngIf="username.errors['maxlength']">Shop name must be at most 20 characters</div>
+              </div> -->
+          </div>
+          <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" 
+              name="email" 
+              
+              class="form-control"
+              
+              formControlName="email"
+              required
+              email
+               
+              >
+              <!-- <div class="alert alert-danger" *ngIf="email.errors && f.submitted">
+                  <div *ngIf="email.errors['required']">Email is required</div>
+                  <div *ngIf="email.errors['email']">Email must be a valid email</div>
+              </div> -->
+          </div>
+          <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" 
+              name="password" 
+              class="form-control"
+              
+              formControlName="password"
+              required
+              minlength="6"
+             
+              >
+              <div class="alert alert-danger" *ngIf="shopForm.controls['password'].errors && f.submitted && (shopForm.touched || shopForm.dirty)">
+                  <div *ngIf="shopForm.controls['password'].errors.required">Password is required</div>
+                  <div *ngIf="shopForm.controls['password'].errors.minlength">Password must be at least 8 characters</div>
+              </div>
+          </div>
+
+          <div class="form-group mt-2">
+            
+            <label >Shop Image:</label>
+            <img [src]="imagePreview" alt="" class="shopImg mb-1" srcset="">
+            
+            <input type="file"
+                    
+                    class="form-control hidden"
+                    id="img"
+                    hidden
+                    name="img"
+                    (change)="fileSelect($event)"/>
+            
+            <label for="img" class="btn btn-success imgL">Upload Shop Image</label>
+            
+          </div>
+        <hr>
+          <div class="form-group mt-3 d-flex justify-content-between">
+              <button class="btn btn-primary btn-block mt-2" [disabled]="!shopForm.valid">Sign Up</button>
+              <a class="mt-3" routerLink="/login">Login?</a>
+          </div>
+          <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+              Signup failed <br> {{ errorMessage }}
+          </div>
+      </form>
+      <div class="alert alert-success" *ngIf="isSuccessful">
+          Your shop registration is successfull!
+      </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+.fa-stack.small{
+    font-size: 1.2em;
+  }
+  .fa-circle{
+    
+    color:rgb(226, 228, 236)
+  }
+  .fa-house-chimney-window{
+    color:rgb(7, 38, 173);
+  }
+
+label{
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+input{
+    display: block;
+    height: 40px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    /* margin-top: 8px; */
+    font-size: 14px;
+    font-weight: 300;
+}
+.card{
+    border : none;
+    padding: auto;
+    background-color: #faf6f6;
+    border-radius: 10px;
+}
+.card input{
+    background-color: #ffffff;
+}
+.bi-house-door{
+    font-size: 20px;
+    font-weight: 900;
+}
+.shopImg{
+    width: 200px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background-image: none;
+
+}
+.imgL{
+    border: 2px solid #c0d4e5;
+    color: black;
+    font-weight: 700;
+    background-color: #95f5d5;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
